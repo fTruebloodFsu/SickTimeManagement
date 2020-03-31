@@ -73,7 +73,7 @@ function validate(firstName, lastName, storeNum) {
                     </Col>
                     <Col xs col = {6}>
                         <input
-                        className={errors.FirstName ? "error" : ""}
+                        className={errors.FirstName ? "error" : "success"}
                         type='text'
                         name='FirstName'
                         placeholder='Quenten'
@@ -81,7 +81,7 @@ function validate(firstName, lastName, storeNum) {
                         onChange={this.myChangeHandler}
                     />
                     <div>
-                        {errors.FirstName ? <p className="errorMessage">*Please Enter A Name</p> : <p></p>}
+                        {errors.FirstName ? <p className="errorMessage">*Please Enter A First Name</p> : <p></p>}
                     </div>
                     </Col>
                 </Row>
@@ -91,7 +91,7 @@ function validate(firstName, lastName, storeNum) {
                     </Col>
                     <Col xs col = {6}>
                         <input
-                        className={errors.LastName ? "error" : ""}
+                        className={errors.LastName ? "error" : "success"}
                         type='text'
                         name='LastName'
                         placeholder='Hicks'
@@ -99,7 +99,7 @@ function validate(firstName, lastName, storeNum) {
                         onChange={this.myChangeHandler}
                         />
                         <div>
-                        {errors.LastName ? <p className="errorMessage">*Please Enter A Name</p> : <p></p>}
+                        {errors.LastName ? <p className="errorMessage">*Please Enter A Last Name</p> : <p></p>}
                     </div>
                     </Col>
                 </Row>
@@ -109,7 +109,7 @@ function validate(firstName, lastName, storeNum) {
                     </Col>
                     <Col xs = {6}> 
                         <input
-                        className={errors.StoreNumber ? "error" : ""}
+                        className={errors.StoreNumber ? "error" : "success"}
                         type='text'
                         name='StoreNumber'
                         placeholder='3'
@@ -117,7 +117,7 @@ function validate(firstName, lastName, storeNum) {
                         onChange={this.myChangeHandler}
                         />
                         <div>
-                        {errors.StoreNumber ? <p className="errorMessage">*Please Enter A Name</p> : <p></p>}
+                        {errors.StoreNumber ? <p className="errorMessage">*Please Enter A Store Number</p> : <p></p>}
                     </div>
                     </Col>
                 </Row>

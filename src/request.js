@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Container, Row, Col, Button, Spinner } from 'reactstrap';
 import './index.css';
 import "react-datepicker/dist/react-datepicker.css";
 import MyNavBar from './navBar.js';
@@ -32,6 +32,14 @@ const formStyle = {
 //         </Row>
 //     );
 // }
+
+const GrowingSpinner = (props) => {
+    return (
+      <div>
+        <Spinner type="grow" color="danger" />
+      </div>
+    );
+  }
 
 
 function validate(firstName, lastName, storeNum, date, shift, hours) {
@@ -115,9 +123,9 @@ class MyForm extends React.Component {
                     <Col xs = {2}>
                         <p>First name:</p>
                     </Col>
-                    <Col xs col = {6}>
+                    <Col xs col = {3}>
                         <input
-                        className={errors.FirstName ? "error" : ""}
+                        className={errors.FirstName ? "error" : "success"}
                         type='text'
                         name='FirstName'
                         placeholder='Quenten'
@@ -125,7 +133,7 @@ class MyForm extends React.Component {
                         onChange={this.myChangeHandler}
                     />
                     <div>
-                        {errors.FirstName ? <p className="errorMessage">*Please Enter A Name</p> : <p></p>}
+                        {errors.FirstName ? <p className="errorMessage">*Please Enter A First Name</p> : <p></p>}
                     </div>
                     </Col>
                 </Row>
@@ -135,7 +143,7 @@ class MyForm extends React.Component {
                     </Col>
                     <Col xs col = {6}>
                         <input
-                        className={errors.LastName ? "error" : ""}
+                        className={errors.LastName ? "error" : "success"}
                         type='text'
                         name='LastName'
                         placeholder='Hicks'
@@ -143,8 +151,8 @@ class MyForm extends React.Component {
                         onChange={this.myChangeHandler}
                         />
                         <div>
-                        {errors.LastName ? <p className="errorMessage">*Please Enter A Name</p> : <p></p>}
-                    </div>
+                            {errors.LastName ? <p className="errorMessage">*Please Enter A Last Name</p> : <p></p>}
+                        </div>
                     </Col>
                 </Row>
                 <Row>
@@ -153,7 +161,7 @@ class MyForm extends React.Component {
                     </Col>
                     <Col xs = {6}> 
                         <input
-                        className={errors.StoreNumber ? "error" : ""}
+                        className={errors.StoreNumber ? "error" : "success"}
                         type='text'
                         name='StoreNumber'
                         placeholder='3'
@@ -161,7 +169,7 @@ class MyForm extends React.Component {
                         onChange={this.myChangeHandler}
                         />
                         <div>
-                        {errors.StoreNumber ? <p className="errorMessage">*Please Enter A Name</p> : <p></p>}
+                        {errors.StoreNumber ? <p className="errorMessage">*Please Enter A Store Number</p> : <p></p>}
                     </div>
                     </Col>
                 </Row>
@@ -171,7 +179,7 @@ class MyForm extends React.Component {
                     </Col>
                     <Col xs = {6}> 
                     <input
-                    className={errors.selectedDate ? "error" : ""}
+                    className={errors.selectedDate ? "error" : "success"}
                     type='text'
                     name='selectedDate'
                     placeholder='mm/dd/yyyy'
@@ -179,7 +187,7 @@ class MyForm extends React.Component {
                     onChange={this.myChangeHandler}
                     />
                     <div>
-                        {errors.selectedDate ? <p className="errorMessage">*Please Enter A Name</p> : <p></p>}
+                        {errors.selectedDate ? <p className="errorMessage">*Please Enter A Date</p> : <p></p>}
                     </div>
                     </Col>
                 </Row>
@@ -189,7 +197,7 @@ class MyForm extends React.Component {
                     </Col>
                     <Col xs = {6}> 
                     <input
-                    className={errors.Shift ? "error" : ""}
+                    className={errors.Shift ? "error" : "success"}
                     type='text'
                     name='Shift'
                     placeholder='12-8'
@@ -197,7 +205,7 @@ class MyForm extends React.Component {
                     onChange={this.myChangeHandler}
                     />
                     <div>
-                        {errors.Shift ? <p className="errorMessage">*Please Enter A Name</p> : <p></p>}
+                        {errors.Shift ? <p className="errorMessage">*Please Enter A Shift</p> : <p></p>}
                     </div>
                     </Col>
                 </Row>
@@ -207,7 +215,7 @@ class MyForm extends React.Component {
                     </Col>
                     <Col xs = {6}> 
                     <input
-                    className={errors.HoursUsed ? "error" : ""}
+                    className={errors.HoursUsed ? "error" : "success"}
                     type='text'
                     name='HoursUsed'
                     placeholder='8'
@@ -215,7 +223,7 @@ class MyForm extends React.Component {
                     onChange={this.myChangeHandler}
                     />
                     <div>
-                        {errors.HoursUsed ? <p className="errorMessage">*Please Enter A Name</p> : <p></p>}
+                        {errors.HoursUsed ? <p className="errorMessage">*Please Enter The Number Of Hours</p> : <p></p>}
                     </div>
                     </Col>
                 </Row>
