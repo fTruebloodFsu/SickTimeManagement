@@ -33,14 +33,6 @@ const formStyle = {
 //     );
 // }
 
-const GrowingSpinner = (props) => {
-    return (
-      <div>
-        <Spinner type="grow" color="danger" />
-      </div>
-    );
-  }
-
 
 function validate(firstName, lastName, storeNum, date, shift, hours) {
     // true means invalid, so our conditions got reversed
@@ -53,6 +45,18 @@ function validate(firstName, lastName, storeNum, date, shift, hours) {
       HoursUsed: !Number(hours),
     };
   }
+
+function allFalse(obj){
+    let result = true;
+    if(obj.FirstName === true) result = false;
+    if(obj.LastName === true) result = false;
+    if(obj.StoreNumber === true) result = false;
+    if(obj.selectedDate === true) result = false;
+    if(obj.Shift === true) result = false;
+    if(obj.HoursUsed === true) result = false;
+
+    return result;
+}
 
 class MyForm extends React.Component {
 
@@ -81,7 +85,7 @@ class MyForm extends React.Component {
             this.state.StoreNumber, this.state.selectedDate,
             this.state.Shift, this.state.HoursUsed);
         
-        if(errorsSub){alert("no errors")}
+        if(allFalse(errorsSub)){alert("no errors")}
       }
 
     render() {
@@ -164,7 +168,7 @@ class MyForm extends React.Component {
                         className={errors.StoreNumber ? "error" : "success"}
                         type='text'
                         name='StoreNumber'
-                        placeholder='3'
+                        placeholder='1'
                         value={this.state.StoreNumber}
                         onChange={this.myChangeHandler}
                         />
@@ -180,14 +184,15 @@ class MyForm extends React.Component {
                     <Col xs = {6}> 
                     <input
                     className={errors.selectedDate ? "error" : "success"}
-                    type='text'
-                    name='selectedDate'
-                    placeholder='mm/dd/yyyy'
+                    type="date"
+                    name="selectedDate"
+                    id="Date"
+                    placeholder="date"
                     value={this.state.selectedDate}
                     onChange={this.myChangeHandler}
                     />
                     <div>
-                        {errors.selectedDate ? <p className="errorMessage">*Please Enter A Date</p> : <p></p>}
+                        {errors.selectedDate ? <p className="errorMessage">*Please Slecet A Date</p> : <p></p>}
                     </div>
                     </Col>
                 </Row>

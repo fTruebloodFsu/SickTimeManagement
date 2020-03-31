@@ -24,6 +24,15 @@ function validate(firstName, lastName, storeNum) {
     };
   }
 
+  function allFalse(obj){
+    let result = true;
+    if(obj.FirstName === true) result = false;
+    if(obj.LastName === true) result = false;
+    if(obj.StoreNumber === true) result = false;
+
+    return result;
+}
+
   class MyFormCheck extends React.Component {
 
     constructor(props) {
@@ -46,7 +55,7 @@ function validate(firstName, lastName, storeNum) {
         event.preventDefault();
         const errorsSub = validate(this.state.FirstName, this.state.LastName, this.state.StoreNumber);
         
-        if(errorsSub){alert("no errors")}
+        if(allFalse(errorsSub)){alert("no errors")}
       }
 
     render() {
