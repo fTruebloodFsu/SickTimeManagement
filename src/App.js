@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import MyNavBar from './navBar.js'
 
-//<Main />
 function App() {
   return (
     <div className="App">

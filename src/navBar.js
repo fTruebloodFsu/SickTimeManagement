@@ -12,7 +12,7 @@ import {
   Nav,
   NavItem,
   NavLink,
-  NavbarText
+  NavbarText,
 } from 'reactstrap';
 
 function MyNavBar(target){
