@@ -56,7 +56,12 @@ function validate(firstName, lastName, storeNum) {
         const errorsSub = validate(this.state.FirstName, this.state.LastName, this.state.StoreNumber);
         
         if(allFalse(errorsSub)){alert("no errors")}
-      }
+    }
+
+    errorMessage = (event) => {
+        event.preventDefault();
+        alert("Errors Detected")
+    }
 
     render() {
     const errors = validate(this.state.FirstName, this.state.LastName, this.state.StoreNumber);
@@ -136,7 +141,10 @@ function validate(firstName, lastName, storeNum) {
                     <Col xs = {2}>
                     </Col>
                     <Col xs = {6}>
-                        <Button color='primary' onClick={this.mySubmitHandler}>Submit</Button>
+                    {allFalse(errors) ?
+                        <Button color='primary' onClick={this.mySubmitHandler}>Submit</Button> :
+                        <Button color='warning' onClick={this.errorMessage}>Submit</Button>
+                    }
                     </Col>
                 </Row>
             </Container>

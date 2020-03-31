@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Container, Row, Col, Button, Spinner } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 import './index.css';
 import "react-datepicker/dist/react-datepicker.css";
 import MyNavBar from './navBar.js';
-import { BrowserRouter } from 'react-router-dom';
 
 const formStyle = {
     backgroundColor: '#212529', 
@@ -86,6 +85,11 @@ class MyForm extends React.Component {
             this.state.Shift, this.state.HoursUsed);
         
         if(allFalse(errorsSub)){alert("no errors")}
+      }
+
+      errorMessage = (event) => {
+        event.preventDefault();
+        alert("Errors Detected")
       }
 
     render() {
@@ -237,7 +241,10 @@ class MyForm extends React.Component {
                     <Col xs = {2}>
                     </Col>
                     <Col xs = {6}>
-                        <Button color='primary' onClick={this.mySubmitHandler}>Submit</Button>
+                        {allFalse(errors) ?
+                        <Button color='primary' onClick={this.mySubmitHandler}>Submit</Button> :
+                        <Button color='warning' onClick={this.errorMessage}>Submit</Button>
+                        }
                     </Col>
                 </Row>
             </Container>
