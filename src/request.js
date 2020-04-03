@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Container, Row, Col, Button } from 'reactstrap';
 import './index.css';
 import "react-datepicker/dist/react-datepicker.css";
-import MyNavBar from './navBar.js';
 
 const formStyle = {
     backgroundColor: '#212529', 
@@ -98,7 +96,6 @@ class MyForm extends React.Component {
         this.state.Shift, this.state.HoursUsed);
       return (
         <div>
-            <MyNavBar />
             <form style={formStyle}>
             <Container>
                 <Row>
@@ -128,10 +125,10 @@ class MyForm extends React.Component {
                 </Row>
                 <br/>
                 <Row>
-                    <Col xs = {2}>
+                    <Col xs = {3}>
                         <p>First name:</p>
                     </Col>
-                    <Col xs col = {3}>
+                    <Col xs = {6}>
                         <input
                         className={errors.FirstName ? "error" : "success"}
                         type='text'
@@ -146,7 +143,7 @@ class MyForm extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs = {2}>
+                    <Col xs = {3}>
                         <p>Last name:</p>
                     </Col>
                     <Col xs col = {6}>
@@ -164,7 +161,7 @@ class MyForm extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs = {2}>
+                    <Col xs = {3}>
                         <p>Store number:</p>
                     </Col>
                     <Col xs = {6}> 
@@ -182,7 +179,7 @@ class MyForm extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs = {2}>
+                    <Col xs = {3}>
                         <p>Date:</p>
                     </Col>
                     <Col xs = {6}> 
@@ -192,7 +189,7 @@ class MyForm extends React.Component {
                     name="selectedDate"
                     id="Date"
                     placeholder="date"
-                    value={this.state.selectedDate}
+                    value={this.state.selectedDate || '03/30/2020'}
                     onChange={this.myChangeHandler}
                     />
                     <div>
@@ -201,7 +198,7 @@ class MyForm extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs = {2}>
+                    <Col xs = {3}>
                         <p>Shift:</p>
                     </Col>
                     <Col xs = {6}> 
@@ -219,7 +216,7 @@ class MyForm extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs = {2}>
+                    <Col xs = {3}>
                         <p>Hours requested:</p>
                     </Col>
                     <Col xs = {6}> 
@@ -238,7 +235,7 @@ class MyForm extends React.Component {
                 </Row>
                 <br/>
                 <Row>
-                    <Col xs = {2}>
+                    <Col xs = {3}>
                     </Col>
                     <Col xs = {6}>
                         {allFalse(errors) ?
@@ -253,9 +250,5 @@ class MyForm extends React.Component {
       );
     }
   }
-  
-  function displayForm(target){
-    ReactDOM.render(<MyForm />, document.getElementById('root'));
-  }
 
-  export default displayForm;
+  export default MyForm;

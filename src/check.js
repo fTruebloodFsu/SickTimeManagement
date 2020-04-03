@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Container, Row, Col, Button } from 'reactstrap';
 import './index.css';
 import "react-datepicker/dist/react-datepicker.css";
-import MyNavBar from './navBar.js';
 
 const formStyle = {
     backgroundColor: '#212529', 
@@ -67,7 +65,6 @@ function validate(firstName, lastName, storeNum) {
     const errors = validate(this.state.FirstName, this.state.LastName, this.state.StoreNumber);
       return (
         <div>
-            <MyNavBar />
             <form style={formStyle}>
             <Container>
                 <Row>
@@ -154,8 +151,4 @@ function validate(firstName, lastName, storeNum) {
     }
   }
 
-  function displayFormCheck(target){
-    ReactDOM.render(<MyFormCheck />, document.getElementById('root'));
-  }
-
-  export default displayFormCheck;
+  export default MyFormCheck;
