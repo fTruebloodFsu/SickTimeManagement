@@ -32,7 +32,6 @@ const formStyle = {
 
 
 function validate(firstName, lastName, storeNum, date, shift, hours) {
-    // true means invalid, so our conditions got reversed
     return {
       FirstName: firstName.length === 0,
       LastName: lastName.length === 0,
@@ -125,7 +124,7 @@ class MyForm extends React.Component {
                 </Row>
                 <br/>
                 <Row>
-                    <Col xs = {3}>
+                    <Col xs = {4}>
                         <p>First name:</p>
                     </Col>
                     <Col xs = {6}>
@@ -143,7 +142,7 @@ class MyForm extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs = {3}>
+                    <Col xs = {4}>
                         <p>Last name:</p>
                     </Col>
                     <Col xs col = {6}>
@@ -161,7 +160,7 @@ class MyForm extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs = {3}>
+                    <Col xs = {4}>
                         <p>Store number:</p>
                     </Col>
                     <Col xs = {6}> 
@@ -179,7 +178,7 @@ class MyForm extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs = {3}>
+                    <Col xs = {4}>
                         <p>Date:</p>
                     </Col>
                     <Col xs = {6}> 
@@ -198,7 +197,7 @@ class MyForm extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs = {3}>
+                    <Col xs = {4}>
                         <p>Shift:</p>
                     </Col>
                     <Col xs = {6}> 
@@ -216,7 +215,7 @@ class MyForm extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs = {3}>
+                    <Col xs = {4}>
                         <p>Hours requested:</p>
                     </Col>
                     <Col xs = {6}> 
@@ -235,7 +234,7 @@ class MyForm extends React.Component {
                 </Row>
                 <br/>
                 <Row>
-                    <Col xs = {3}>
+                    <Col xs = {4}>
                     </Col>
                     <Col xs = {6}>
                         {allFalse(errors) ?

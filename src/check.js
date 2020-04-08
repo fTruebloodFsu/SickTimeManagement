@@ -79,7 +79,7 @@ function validate(firstName, lastName, storeNum) {
                 </Row>
                 <br/>
                 <Row>
-                    <Col xs = {2}>
+                    <Col xs = {4}>
                         <p>First name:</p>
                     </Col>
                     <Col xs col = {6}>
@@ -97,7 +97,7 @@ function validate(firstName, lastName, storeNum) {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs = {2}>
+                    <Col xs = {4}>
                         <p>Last name:</p>
                     </Col>
                     <Col xs col = {6}>
@@ -115,7 +115,7 @@ function validate(firstName, lastName, storeNum) {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs = {2}>
+                    <Col xs = {4}>
                         <p>Store number:</p>
                     </Col>
                     <Col xs = {6}> 
@@ -135,7 +135,7 @@ function validate(firstName, lastName, storeNum) {
                 
                 <br/>
                 <Row>
-                    <Col xs = {2}>
+                    <Col xs = {4}>
                     </Col>
                     <Col xs = {6}>
                     {allFalse(errors) ?
