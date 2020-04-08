@@ -24,11 +24,9 @@ function MyNavBar(target){
             <DropdownItem><Link style={navStyle} to='/request'>Request</Link></DropdownItem>
             <DropdownItem><Link style={navStyle} to='/check'>Check</Link></DropdownItem>
             <DropdownItem><Link style={navStyle} to='/stats'>Stats</Link></DropdownItem>
+            <DropdownItem><Time /></DropdownItem>
           </DropdownMenu>
         </UncontrolledDropdown>
-        <div>
-          <Time />
-        </div>
       </div>
       // <nav>
       //     <ul className='nav-Link'>
