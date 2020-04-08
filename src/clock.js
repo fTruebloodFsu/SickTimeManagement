@@ -5,7 +5,7 @@ function Time(target){
 
   return(
     <div className='Time'>
-      <Clock format={'dddd, MMMM Do YYYY'} ticking={true} timezone={'US/Pacific'} />
+      <Clock format={'dd, MMMM Do YYYY'} ticking={true} timezone={'US/Pacific'} />
     </div>
   );
 }
