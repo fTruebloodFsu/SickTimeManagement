@@ -5,6 +5,28 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
+const DBentries = require('./server.js');
+const port = 3000
+
+app.use(bodyParser.json())
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+)
+
+app.post('/newEntry', DBentries.enterNewRequest);
+app.delete('/delete', DBentries.deleteRequest);
+app.get('/requets', DBentries.getRequestByName);
+
+app.listen(port, () => {
+  console.log(`App running on port ${port}.`)
+})
+
+
 ReactDOM.render(<BrowserRouter>
                   <App />
                 </BrowserRouter>, 
